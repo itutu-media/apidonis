@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "3d0699ec-f4bb-4af7-8a7e-1d5eada473d7",
+		"name": "UHB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-UHB",
+								"value": "{{DAPO}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "demo@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL_DEV}}login",
+							"host": [
+								"{{BASE_URL_DEV}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login JWT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-UHB",
+								"value": "{{DAPO}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "demo@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "refreshToken",
+									"value": "f84d3b9765b3f3dc9ff7abdacc757287yNCOoYXFrIK6Bxo6ony2AvvUJIir6wHNF9/pbTmFFpbjjKvVvJ34lImDUC2nKmRY",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL_DEV}}auth",
+							"host": [
+								"{{BASE_URL_DEV}}auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Index",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTYxNDc0NDczN30.VfKwlKZ3bxu5ByRU9X19ypA8uZNLdV1OeUXsPRg8AEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-UHB",
+						"value": "{{DAPO}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL_DEV}}dapo",
+					"host": [
+						"{{BASE_URL_DEV}}dapo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
