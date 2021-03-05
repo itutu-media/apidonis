@@ -18,12 +18,20 @@ const Hash = use('Hash')
 class UserSeeder {
   async run() {
     await Database.table('users').insert([{
-      username: 'demouser',
-      email: 'demo@mail.com',
+      username: 'demodosen',
+      email: 'demodosen@mail.com',
       password: await Hash.make('password')
     },{
-      username: 'demouser2',
-      email: 'demo2@mail.com',
+      username: 'demostaf',
+      email: 'demostaf@mail.com',
+      password: await Hash.make('password')
+    },{
+      username: 'demomhs',
+      email: 'demomhs@mail.com',
+      password: await Hash.make('password')
+    },{
+      username: 'demoalumni',
+      email: 'demoalumni@mail.com',
       password: await Hash.make('password')
     }])
   }

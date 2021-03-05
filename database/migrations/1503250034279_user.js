@@ -7,11 +7,14 @@ class UserSchema extends Schema {
   up () {
     this.create('users', (table) => {
       table.increments()
-      table.string('username', 80).notNullable().unique()
-      table.string('email', 254).notNullable().unique()
-      table.string('password', 60).notNullable()
-      table.timestamps()
+      table.string('username', 32).notNullable().unique()
+      table.string('email', 255).notNullable().unique()
+      table.string('password', 255).notNullable()
+      table.timestamp('created_at').defaultTo(this.fn.now()).notNullable()
+      // table.timestamp('updated_at').nullable()
+      table.timestamp('deleted_at').nullable()
     })
+    this.raw("ALTER TABLE users ADD COLUMN updated_at timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP AFTER created_at")
   }
 
   down () {

@@ -1,12 +1,12 @@
 {
 	"info": {
 		"_postman_id": "3d0699ec-f4bb-4af7-8a7e-1d5eada473d7",
-		"name": "UHB",
+		"name": "API_UHB",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "API",
+			"name": "Auth",
 			"item": [
 				{
 					"name": "Login",
@@ -24,7 +24,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "demo@mail.com",
+									"value": "{{DEMO-DOSEN}}",
 									"type": "text"
 								},
 								{
@@ -35,9 +35,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{BASE_URL_DEV}}login",
+							"raw": "{{BASE_URL_VPS}}login",
 							"host": [
-								"{{BASE_URL_DEV}}login"
+								"{{BASE_URL_VPS}}login"
 							]
 						}
 					},
@@ -59,7 +59,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "demo@mail.com",
+									"value": "{{DEMO-DOSEN}}",
 									"type": "text"
 								},
 								{
@@ -76,9 +76,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{BASE_URL_DEV}}auth",
+							"raw": "{{BASE_URL_VPS}}auth",
 							"host": [
-								"{{BASE_URL_DEV}}auth"
+								"{{BASE_URL_VPS}}auth"
 							]
 						}
 					},
@@ -108,9 +108,39 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL_DEV}}dapo",
+					"raw": "{{BASE_URL_VPS}}",
 					"host": [
-						"{{BASE_URL_DEV}}dapo"
+						"{{BASE_URL_VPS}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Mahasiswa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTYxNDkzMzIwNn0.tdPQ6qUjpiqGpZKgTFbCu6IsHGYoMlXQi1OxV7LMR9Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-UHB",
+						"value": "{{DAPO}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL_VPS}}mhs",
+					"host": [
+						"{{BASE_URL_VPS}}mhs"
 					]
 				}
 			},
