@@ -3,7 +3,7 @@
 1. nodejs v14.15.4
 2. npm v6.14.10
 3. adonis v4.1.0
-4. mysql
+4. mariadb v10.4.11
 ```
 
 # Adonis API application
@@ -33,4 +33,13 @@ Run the following command to run startup migrations.
 
 ```js
 adonis migration:run
+```
+
+
+### Seed
+
+Run the following command to insert dummy.
+
+```js
+adonis seed
 ```

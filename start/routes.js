@@ -15,9 +15,10 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const Env = use('Env')
 
 Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+  return 'Server is ready'
 })
 
 Route.resource('coba', 'CobaController')
@@ -26,4 +27,4 @@ Route.post('login', 'UserController.login').middleware(['guest','dapo'])
 Route.post('auth', 'AuthController.login').middleware(['guest','dapo'])
 // Route.get('users/:id', 'UserController.show').middleware('auth')
 
-Route.get('dapo', 'DapoController.index').middleware(['auth','dapo'])
+Route.get('mhs', 'MhsController.index').middleware(['auth','dapo'])
